@@ -1,0 +1,6 @@
+{
+  "name": "CloudsBuilt - Software & AI Solutions",
+  "description": "Enterprise software engineering, custom web development, and AI automation solutions.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

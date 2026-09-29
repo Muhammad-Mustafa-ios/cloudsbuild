@@ -1,0 +1,288 @@
+{
+  "projects": [
+    {
+      "id": "p1",
+      "name": "Enterprise AI Customer Support Bot",
+      "clientName": "Global Logistics Corp",
+      "category": "AI Automation",
+      "status": "Completed",
+      "progress": 100,
+      "deadline": "2026-10-15",
+      "budget": "$24,500",
+      "description": "Deployed an advanced LLM-powered autonomous chatbot integrated with Zendesk and internal knowledge bases, reducing customer wait times by 74%.",
+      "team": [
+        "Sam Johnson",
+        "Alex Rivera"
+      ],
+      "tasksCount": 12,
+      "completedTasksCount": 12
+    },
+    {
+      "id": "p2",
+      "name": "Cloud-Native FinTech SaaS Platform",
+      "clientName": "Apex Capital",
+      "category": "Web Development",
+      "status": "In Progress",
+      "progress": 68,
+      "deadline": "2026-11-30",
+      "budget": "$48,000",
+      "description": "Building a high-performance multi-tenant wealth management dashboard with real-time portfolio tracking and bank-grade encryption.",
+      "team": [
+        "Sam Johnson",
+        "Elena Rostova",
+        "Devon Miles"
+      ],
+      "tasksCount": 24,
+      "completedTasksCount": 16
+    },
+    {
+      "id": "p3",
+      "name": "Automated Supply Chain ERP Sync",
+      "clientName": "Vanguard Supply",
+      "category": "Business Software",
+      "status": "In Progress",
+      "progress": 42,
+      "deadline": "2026-12-10",
+      "budget": "$35,000",
+      "description": "Connecting legacy inventory databases with modern cloud APIs using custom event-driven webhook microservices.",
+      "team": [
+        "Devon Miles",
+        "Sarah Chen"
+      ],
+      "tasksCount": 18,
+      "completedTasksCount": 8
+    }
+  ],
+  "internships": [
+    {
+      "id": "int-1",
+      "title": "Full-Stack Web Development Intern",
+      "department": "Engineering",
+      "duration": "3 Months (Remote / Hybrid)",
+      "stipend": "$600 / month + Certificate",
+      "description": "Work alongside senior engineers building scalable React, Node.js, and TypeScript web applications for global enterprise clients.",
+      "requirements": [
+        "Proficiency in JavaScript/TypeScript & React",
+        "Familiarity with REST APIs and Git",
+        "Strong problem-solving mindset"
+      ],
+      "deadline": "2026-10-01",
+      "active": true
+    },
+    {
+      "id": "int-2",
+      "title": "AI & Machine Learning Engineering Intern",
+      "department": "AI Research & Automation",
+      "duration": "4 Months (Remote)",
+      "stipend": "$800 / month + Certificate",
+      "description": "Build cutting-edge LLM agent pipelines, RAG architectures, and automated workflow triggers for real business clients.",
+      "requirements": [
+        "Python & TypeScript experience",
+        "Knowledge of OpenAI / Gemini SDKs",
+        "Understanding of vector databases"
+      ],
+      "deadline": "2026-10-10",
+      "active": true
+    },
+    {
+      "id": "int-3",
+      "title": "UI/UX Product Design Intern",
+      "department": "Design",
+      "duration": "3 Months (Remote)",
+      "stipend": "$500 / month + Certificate",
+      "description": "Design high-converting landing pages, SaaS dashboards, and mobile app design systems in Figma.",
+      "requirements": [
+        "Portfolio demonstrating UI/UX mastery",
+        "Proficiency in Figma and prototyping",
+        "Understanding of design systems"
+      ],
+      "deadline": "2026-10-15",
+      "active": true
+    }
+  ],
+  "courses": [
+    {
+      "id": "crs-1",
+      "title": "Full-Stack Web Engineering Bootcamp",
+      "category": "Web Development",
+      "level": "Intermediate",
+      "duration": "8 Weeks (Self-Paced)",
+      "price": "$199 (Free for Interns)",
+      "rating": 4.9,
+      "studentsCount": 340,
+      "description": "Master modern React, TypeScript, Node.js, Express, and cloud deployment from industry experts at Sam Stack Solution.",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    },
+    {
+      "id": "crs-2",
+      "title": "Applied Generative AI & LLM Automation",
+      "category": "Artificial Intelligence",
+      "level": "Advanced",
+      "duration": "6 Weeks",
+      "price": "$299",
+      "rating": 4.95,
+      "studentsCount": 215,
+      "description": "Learn how to build production-grade AI agents, RAG pipelines, function calling, and workflow automations using the Gemini API.",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    },
+    {
+      "id": "crs-3",
+      "title": "Cloud Architecture & DevOps Masterclass",
+      "category": "Cloud & DevOps",
+      "level": "Intermediate",
+      "duration": "6 Weeks",
+      "price": "$249",
+      "rating": 4.88,
+      "studentsCount": 180,
+      "description": "Master Docker, Kubernetes, CI/CD pipelines, Cloud Run deployment, and infrastructure security.",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    }
+  ],
+  "contacts": [],
+  "internshipApplications": [],
+  "courseEnrollments": [],
+  "pricing": [
+    {
+      "id": "plan-1",
+      "name": "Starter",
+      "tagline": "For small businesses getting started digitally.",
+      "priceMonthly": "Discussed on Contact",
+      "priceProject": "Discussed on Contact",
+      "popular": false,
+      "features": [
+        "Modern responsive website",
+        "Custom UI/UX design",
+        "Basic SEO optimization",
+        "Contact form integration",
+        "Standard mobile responsiveness",
+        "1 month post-launch support"
+      ]
+    },
+    {
+      "id": "plan-2",
+      "name": "Growth",
+      "tagline": "For businesses ready to automate and scale.",
+      "priceMonthly": "Discussed on Contact",
+      "priceProject": "Discussed on Contact",
+      "popular": true,
+      "features": [
+        "Advanced web application / E-Commerce",
+        "AI automation workflow (up to 3 pipelines)",
+        "AI Customer Support chatbot",
+        "Database & CRM integration",
+        "Real-time analytics dashboard",
+        "Priority 24/7 maintenance & support"
+      ]
+    },
+    {
+      "id": "plan-3",
+      "name": "Custom",
+      "tagline": "For advanced software and automation requirements.",
+      "priceMonthly": "Discussed on Contact",
+      "priceProject": "Discussed on Contact",
+      "popular": false,
+      "features": [
+        "Fully custom enterprise software",
+        "Unlimited AI agents & custom LLM fine-tuning",
+        "Complex ERP / legacy API integrations",
+        "Dedicated engineering team",
+        "Advanced security & HIPAA/SOC2 compliance",
+        "SLA guaranteed uptime"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "u1",
+      "email": "admin@samstack.com",
+      "name": "Sam Johnson",
+      "role": "admin",
+      "password": "SamStackAdmin2026!"
+    }
+  ],
+  "content": {
+    "hero": {
+      "badgeText": "Sam Stack Solution • Enterprise Software & AI",
+      "title": "Enterprise Software & AI Automation Excellence",
+      "subtitle": "We architect elite software engineering solutions, autonomous AI agents, and high-performance digital products for modern enterprises.",
+      "primaryCta": "Explore Solutions",
+      "secondaryCta": "Contact Engineering Team"
+    },
+    "pricing": [
+      {
+        "id": "pr1",
+        "name": "Starter",
+        "pricePk": "PKR 30,000",
+        "priceInt": "$300",
+        "price": "$300",
+        "tagline": "Professional website + UI/UX + basic SEO + forms + mobile responsive + 1 month support.",
+        "period": "/ project",
+        "popular": false,
+        "features": [
+          "Professional website & UI/UX design",
+          "Basic SEO optimization",
+          "Contact & inquiry forms",
+          "Fully mobile responsive layout",
+          "1 month post-launch support"
+        ]
+      },
+      {
+        "id": "pr2",
+        "name": "Growth",
+        "pricePk": "PKR 60,000",
+        "priceInt": "$750",
+        "price": "$750",
+        "tagline": "Website/E-commerce + basic AI chatbot + 1–2 automation workflows + database integration + support.",
+        "period": "/ project",
+        "popular": true,
+        "features": [
+          "Advanced Website or E-Commerce store",
+          "Basic AI Customer Support chatbot",
+          "1–2 custom AI automation workflows",
+          "Full database integration & admin panel",
+          "Ongoing maintenance & support"
+        ]
+      },
+      {
+        "id": "pr3",
+        "name": "Custom",
+        "pricePk": "Starting PKR 120,000",
+        "priceInt": "Starting $1,500",
+        "price": "Starting $1,500",
+        "tagline": "Custom software + AI automation + integrations + dashboards.",
+        "period": "/ project",
+        "popular": false,
+        "features": [
+          "Fully custom enterprise software",
+          "Advanced AI automation & workflows",
+          "Third-party API & CRM integrations",
+          "Scalable dashboards & analytics",
+          "Dedicated priority engineering"
+        ]
+      }
+    ],
+    "testimonials": [
+      {
+        "id": "t1",
+        "name": "Muhammad Ali & Ayesha Khan",
+        "role": "Co-Founders, LahoreTech Solutions",
+        "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+        "content": "Sam Stack Solution completely transformed our software development and AI automation process. Their technical expertise and quality of work are truly commendable.",
+        "rating": 5,
+        "whatsappChatImage": "https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "id": "t2",
+        "name": "Sophia Laurent",
+        "role": "CEO, Luxe Apparel Global",
+        "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+        "content": "Our new e-commerce platform developed by Sam Stack Solution is ultra-fast. Online sales increased by 38% in the first month!",
+        "rating": 5,
+        "whatsappChatImage": "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
+  }
+}
