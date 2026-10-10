@@ -7,48 +7,48 @@ export function TestimonialsSection() {
       id: 1,
       name: 'Muhammad Ali & Ayesha Khan',
       role: 'Co-Founders, LahoreTech Solutions (Lahore, Pakistan)',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
-      content: 'CloudsBuilt completely transformed our software development and AI automation process. Their technical expertise and quality of work are truly commendable.',
+      letter: 'M',
+      content: 'We were running our software business online for months but barely getting any clients or traffic. After partnering with CloudsBuilt, our digital presence skyrocketed and we are now getting 3x more clients every single week!',
       rating: 5,
     },
     {
       id: 2,
       name: 'Sophia Laurent',
       role: 'CEO, Luxe Apparel Global (Paris, France)',
-      avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80',
-      content: 'Our new e-commerce platform developed by CloudsBuilt is ultra-fast. Online sales increased by 38% in the first month!',
+      letter: 'S',
+      content: 'We struggled to attract international buyers with our old slow website and had very few orders. CloudsBuilt rebuilt our e-commerce platform, and within weeks our sales and customer inquiries surged dramatically!',
       rating: 5,
     },
     {
       id: 3,
       name: 'Usman Malik',
       role: 'Director of Operations, Karachi Logistics (Karachi, Pakistan)',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-      content: 'Working with CloudsBuilt was a great joy. The AI agents they built for our customer support significantly reduced our time and operational costs.',
+      letter: 'U',
+      content: 'Before CloudsBuilt, we were getting hardly any inbound leads through our web portal. Their custom development and automated workflows brought us a steady stream of new corporate clients.',
       rating: 5,
     },
     {
       id: 4,
       name: 'Carlos Mendoza',
       role: 'Chief Technology Officer, InnovaLatam (Madrid, Spain)',
-      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-      content: 'The experience with CloudsBuilt has been exceptional. Their cloud architecture and artificial intelligence workflows exceeded all our expectations.',
+      letter: 'C',
+      content: 'Our startup was stuck with low user engagement and minimal client acquisition. CloudsBuilt revamped our entire tech stack and user experience, leading to a massive influx of new paying customers.',
       rating: 5,
     },
     {
       id: 5,
       name: 'Fatima Noor',
       role: 'Lead Product Manager, Islamabad Digital (Islamabad, Pakistan)',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
-      content: 'Amazing team and incredible service! The web applications and AI systems they built have taken our business to new heights.',
+      letter: 'F',
+      content: 'We had a great service but our online visibility was poor, resulting in very few client sign-ups. CloudsBuilt optimized everything, and now our pipeline is constantly full of high-value clients.',
       rating: 5,
     },
     {
       id: 6,
       name: 'Hans Weber',
       role: 'Managing Director, Berlin Cloud Systems (Berlin, Germany)',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80',
-      content: 'Excellent work! The automation processes and custom software solutions delivered by CloudsBuilt are of the highest quality.',
+      letter: 'H',
+      content: 'We were running our cloud agency without proper client conversion tools, leading to stagnant growth. CloudsBuilt delivered a high-converting platform that doubled our monthly client acquisitions.',
       rating: 5,
     },
   ];
@@ -132,7 +132,7 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-[#F8FAFC] via-white to-[#F8FAFC] overflow-hidden relative">
+    <section id="testimonials" className="py-24 bg-gradient-to-b from-[#F8FAFC] via-white to-[#F8FAFC] overflow-hidden relative">
       {/* Background decorative glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-blue-400/10 rounded-full blur-[120px] pointer-events-none" />
 
@@ -195,12 +195,9 @@ export function TestimonialsSection() {
                     </div>
 
                     <div className="flex items-center gap-4 pt-4 border-t border-slate-100">
-                      <img
-                        src={t.avatar}
-                        alt={t.name}
-                        className="w-12 h-12 rounded-2xl object-cover border-2 border-blue-500/20"
-                        referrerPolicy="no-referrer"
-                      />
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-bold text-lg flex items-center justify-center shadow-md shadow-blue-500/20 border border-blue-400/30">
+                        {t.letter}
+                      </div>
                       <div>
                         <div className="text-sm font-bold text-[#0F172A]">{t.name}</div>
                         <div className="text-xs text-[#64748B] font-medium">{t.role}</div>

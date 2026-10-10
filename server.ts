@@ -274,7 +274,58 @@ const initialData = {
         whatsappChatImage: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=800&q=80"
       }
     ]
-  }
+  },
+  services: [
+    {
+      id: 1,
+      title: "Websites & Web Platforms",
+      description: "A website built around your business, not a recycled template.",
+      imageUrl: "https://i.pinimg.com/736x/b1/7e/17/b17e1784d932c8a69512c452ec446cdf.jpg",
+      link: "/services/websites"
+    },
+    {
+      id: 2,
+      title: "E-Commerce",
+      description: "An online store your customers can actually use.",
+      imageUrl: "https://i.pinimg.com/736x/b1/7e/17/b17e1784d932c8a69512c452ec446cdf.jpg",
+      link: "/services/ecommerce"
+    },
+    {
+      id: 3,
+      title: "Software & Business Systems",
+      description: "Software built around how your business works.",
+      imageUrl: "https://i.pinimg.com/1200x/b3/18/aa/b318aace2f92aa1c37a5b38446d6b078.jpg",
+      link: "/services/software"
+    },
+    {
+      id: 4,
+      title: "Mobile Apps",
+      description: "Mobile applications for your customers or your team.",
+      imageUrl: "https://i.pinimg.com/736x/f3/2f/25/f32f2546c88eb85bae3111d81de4d608.jpg",
+      link: "/services/mobile-apps"
+    },
+    {
+      id: 5,
+      title: "AI & Automation",
+      description: "AI tools and automated workflows that help your business move faster.",
+      imageUrl: "https://i.pinimg.com/736x/d3/17/b3/d317b31e0835bbd1b25a876ae6135424.jpg",
+      link: "/services/ai-automation"
+    },
+    {
+      id: 6,
+      title: "Design, Support & Growth",
+      description: "We continue improving and supporting your technology after launch.",
+      imageUrl: "https://i.pinimg.com/1200x/ef/72/71/ef72718ba9d31cfb2a7f462411fc094d.jpg",
+      link: "/services/support"
+    },
+    {
+      id: 7,
+      title: "Digital Marketing & Meta/TikTok Ads",
+      description: "High-converting ad campaigns on Meta and TikTok to drive immediate customer acquisition and sales.",
+      imageUrl: "https://i.pinimg.com/736x/54/6c/66/546c6694a58259a264274435cd3494f9.jpg",
+      link: "/services/marketing"
+    }
+  ]
 };
 
 function getDb() {
@@ -299,6 +350,21 @@ function saveDb(data: any) {
 app.get("/api/data", (req, res) => {
   const db = getDb();
   res.json(db);
+});
+
+// Services CRUD
+app.get("/api/services", (req, res) => {
+  const db = getDb();
+  res.json(db.services || initialData.services);
+});
+
+app.put("/api/services/:id", (req, res) => {
+  const db = getDb();
+  const { id } = req.params;
+  if (!db.services) db.services = initialData.services;
+  db.services = db.services.map((s: any) => String(s.id) === String(id) ? { ...s, ...req.body } : s);
+  saveDb(db);
+  res.json({ success: true });
 });
 
 // Projects CRUD

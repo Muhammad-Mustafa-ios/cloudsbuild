@@ -56,6 +56,21 @@ export function PricingSection({ onOpenContact, plans = [] }: PricingSectionProp
 
   return (
     <section id="pricing" className="py-24 bg-gradient-to-b from-white via-[#F8FAFC] to-white relative overflow-hidden">
+      <style>{`
+        @keyframes frequentShake {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          12% { transform: translateY(-4px) rotate(-0.3deg); }
+          25% { transform: translateY(4px) rotate(0.3deg); }
+          38% { transform: translateY(-3px) rotate(-0.2deg); }
+          50% { transform: translateY(3px) rotate(0.2deg); }
+          63% { transform: translateY(-2px) rotate(-0.1deg); }
+          75% { transform: translateY(2px) rotate(0.1deg); }
+          88% { transform: translateY(-1px) rotate(0deg); }
+        }
+        .animate-shake-attention {
+          animation: frequentShake 2.2s ease-in-out infinite;
+        }
+      `}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -80,7 +95,7 @@ export function PricingSection({ onOpenContact, plans = [] }: PricingSectionProp
                 key={plan.id || index}
                 className={`bg-white rounded-3xl p-8 border flex flex-col justify-between transition-all duration-300 relative ${
                   plan.popular
-                    ? 'border-[#2563EB] shadow-2xl ring-2 ring-[#2563EB]/25 lg:-translate-y-2'
+                    ? 'border-[#2563EB] shadow-2xl ring-2 ring-[#2563EB]/25 lg:-translate-y-2 animate-shake-attention'
                     : 'border-slate-200/80 shadow-lg shadow-slate-100 hover:shadow-xl'
                 }`}
               >
@@ -121,7 +136,7 @@ export function PricingSection({ onOpenContact, plans = [] }: PricingSectionProp
                 <div className="pt-8 mt-8 border-t border-slate-100">
                   <button
                     onClick={() => onOpenContact(plan)}
-                    className={`w-full py-4 rounded-xl font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer ${
+                    className={`w-full py-4 rounded-xl font-bold text-sm transition-all duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer ${
                       plan.popular
                         ? 'bg-[#2563EB] hover:bg-blue-700 text-white shadow-lg shadow-blue-500/20'
                         : 'bg-slate-900 hover:bg-slate-800 text-white shadow-md'

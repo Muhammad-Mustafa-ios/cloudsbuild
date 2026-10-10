@@ -4,6 +4,7 @@ import { ArrowLeft, Send, MessageCircle, Mail, Phone, MapPin, Globe, CheckCircle
 interface ContactPageProps {
   onBackToHome: () => void;
   onRefreshData?: () => void;
+  selectedPlan?: any;
 }
 
 interface FormData {
@@ -15,17 +16,16 @@ interface FormData {
   message: string;
 }
 
-const initialFormData: FormData = {
-  name: '',
-  email: '',
-  phone: '',
-  company: '',
-  service: 'Enterprise Web & SaaS Development',
-  message: '',
-};
+export function ContactPage({ onBackToHome, onRefreshData, selectedPlan }: ContactPageProps) {
+  const [formData, setFormData] = useState<FormData>(() => ({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    service: selectedPlan ? `Plan: ${selectedPlan.name} (${selectedPlan.price})` : 'Enterprise Web & SaaS Development',
+    message: selectedPlan ? `I am interested in selecting the ${selectedPlan.name} plan (${selectedPlan.price}). Features included: ${(selectedPlan.features || []).join(', ')}.` : '',
+  }));
 
-export function ContactPage({ onBackToHome, onRefreshData }: ContactPageProps) {
-  const [formData, setFormData] = useState<FormData>(initialFormData);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -87,7 +87,14 @@ export function ContactPage({ onBackToHome, onRefreshData }: ContactPageProps) {
   };
 
   const resetForm = () => {
-    setFormData(initialFormData);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      service: selectedPlan ? `Plan: ${selectedPlan.name} (${selectedPlan.price})` : 'Enterprise Web & SaaS Development',
+      message: selectedPlan ? `I am interested in selecting the ${selectedPlan.name} plan (${selectedPlan.price}). Features included: ${(selectedPlan.features || []).join(', ')}.` : '',
+    });
     setSubmitted(false);
     setError('');
   };
@@ -101,7 +108,7 @@ export function ContactPage({ onBackToHome, onRefreshData }: ContactPageProps) {
         {/* Back Button */}
         <button
           onClick={onBackToHome}
-          className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100 px-4 py-2.5 rounded-xl transition-all mb-8 shadow-sm"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100 px-4 py-2.5 rounded-xl transition-all mb-8 shadow-sm cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" /> Back to Home
         </button>
@@ -186,6 +193,20 @@ export function ContactPage({ onBackToHome, onRefreshData }: ContactPageProps) {
 
           {/* Right Column: Pristine Native Website Contact Form */}
           <div className="lg:col-span-8 bg-white rounded-3xl border border-slate-200/80 p-8 sm:p-10 shadow-sm relative">
+            {selectedPlan && (
+              <div className="mb-8 p-5 rounded-2xl bg-blue-50 border border-blue-200 text-blue-900 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold">
+                    ⭐
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold tracking-widest text-blue-600 uppercase">Selected Plan</span>
+                    <h4 className="text-lg font-extrabold text-[#0F172A]">{selectedPlan.name} Plan ({selectedPlan.price})</h4>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {submitted ? (
               <div className="text-center py-16 space-y-5">
                 <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto">
@@ -203,7 +224,7 @@ export function ContactPage({ onBackToHome, onRefreshData }: ContactPageProps) {
                 <button
                   type="button"
                   onClick={resetForm}
-                  className="mt-4 px-6 py-3 rounded-xl bg-[#2563EB] hover:bg-blue-700 text-white text-sm font-bold transition-all shadow-md shadow-blue-500/20"
+                  className="mt-4 px-6 py-3 rounded-xl bg-[#2563EB] hover:bg-blue-700 text-white text-sm font-bold transition-all shadow-md shadow-blue-500/20 cursor-pointer"
                 >
                   Send Another Message
                 </button>
@@ -260,14 +281,14 @@ export function ContactPage({ onBackToHome, onRefreshData }: ContactPageProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className={labelClass}>
-                      Phone Number
+                      Phone Number / WhatsApp
                     </label>
                     <input
                       id="phone"
                       type="tel"
                       name="phone"
-                      maxLength={30}
-                      placeholder="+1 (555) 000-0000"
+                      maxLength={50}
+                      placeholder="+1 (555) 019-2834"
                       value={formData.phone}
                       onChange={handleChange}
                       className={inputClass}
@@ -283,7 +304,7 @@ export function ContactPage({ onBackToHome, onRefreshData }: ContactPageProps) {
                       type="text"
                       name="company"
                       maxLength={100}
-                      placeholder="Acme Corp"
+                      placeholder="Acme Inc."
                       value={formData.company}
                       onChange={handleChange}
                       className={inputClass}
@@ -293,66 +314,71 @@ export function ContactPage({ onBackToHome, onRefreshData }: ContactPageProps) {
 
                 <div>
                   <label htmlFor="service" className={labelClass}>
-                    Service Required *
+                    Service / Plan Interested In *
                   </label>
                   <select
                     id="service"
                     name="service"
-                    required
                     value={formData.service}
                     onChange={handleChange}
                     className={inputClass}
                   >
-                    <option value="Enterprise Web & SaaS Development">Enterprise Web & SaaS Development</option>
-                    <option value="AI Automation & Custom Agents">AI Automation & Custom Agents</option>
-                    <option value="Cloud Architecture & DevOps">Cloud Architecture & DevOps</option>
-                    <option value="UI/UX Product Design">UI/UX Product Design</option>
-                    <option value="Mobile App Development">Mobile App Development</option>
-                    <option value="AI Chatbot & LLM Integration">AI Chatbot & LLM Integration</option>
+                    {selectedPlan && (
+                      <option value={`Plan: ${selectedPlan.name} (${selectedPlan.price})`}>
+                        Selected Plan: {selectedPlan.name} ({selectedPlan.price})
+                      </option>
+                    )}
+                    <option value="Websites & Web Platforms">Websites & Web Platforms</option>
+                    <option value="E-Commerce">E-Commerce</option>
+                    <option value="Software & Business Systems">Software & Business Systems</option>
+                    <option value="Mobile Apps">Mobile Apps</option>
+                    <option value="AI & Automation">AI & Automation</option>
+                    <option value="Digital Marketing & Meta/TikTok Ads">Digital Marketing & Meta/TikTok Ads</option>
+                    <option value="Design, Support & Growth">Design, Support & Growth</option>
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="message" className={labelClass}>
-                    Project Details / Message *
+                    Project Details & Requirements *
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
                     required
-                    maxLength={5000}
-                    placeholder="Tell us about your project requirements, goals, and timeline..."
+                    maxLength={2000}
+                    placeholder="Tell us about your goals, features needed, and timeline..."
                     value={formData.message}
                     onChange={handleChange}
-                    className={`${inputClass} resize-none`}
+                    className={inputClass}
                   />
                 </div>
 
                 {error && (
-                  <div
-                    role="alert"
-                    className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm flex items-start gap-2"
-                  >
+                  <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm flex items-center gap-2">
                     <AlertCircle className="w-5 h-5 shrink-0" />
                     <span>{error}</span>
                   </div>
                 )}
 
-                <div className="pt-2">
+                <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full sm:flex-1 py-4 rounded-xl bg-[#2563EB] hover:bg-blue-700 text-white font-bold text-sm shadow-xl shadow-blue-500/25 hover:shadow-2xl transition-all flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
+                  >
+                    {submitting ? 'Submitting...' : 'Send Inquiry'} <Send className="w-4 h-4" />
+                  </button>
+
                   <button
                     type="button"
                     onClick={handleWhatsAppSubmit}
-                    className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-500/25 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full sm:w-auto px-6 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-xl shadow-emerald-500/25 hover:shadow-2xl transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <MessageCircle className="w-5 h-5" />
-                    Submit to WhatsApp
+                    <MessageCircle className="w-4 h-4" /> Send via WhatsApp
                   </button>
                 </div>
-
-                <p className="text-xs text-center text-[#64748B]">
-                  Your information is encrypted and securely sent to our engineering team.
-                </p>
               </form>
             )}
           </div>
