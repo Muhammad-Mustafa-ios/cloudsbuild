@@ -16,13 +16,34 @@ export function WhyUsHero({ onOpenContact }: WhyUsHeroProps) {
     /* ============ PASTE YOUR ICON IMAGE LINKS HERE ============
        Each line = one mini icon. Put the full image URL (https://...) between the quotes.
        Leave "" to show a default icon. Add or delete lines to change how many icons orbit.   */
-    const OUTER_ICONS = [          // BIG circle  - rotates clockwise (14 icons)
-      "", "", "", "", "", "", "", "", "", "", "", "", "", ""
+    const OUTER_ICONS = [
+      "https://i.pinimg.com/736x/0c/73/53/0c735354d280f3f88caa3e76e7676498.jpg", 
+      "https://i.pinimg.com/236x/77/ef/ca/77efca178b11e0fdf3680386c3926fa0.jpg",
+      "https://i.pinimg.com/736x/96/ec/68/96ec68ff674375870db64ba4c61f627b.jpg",
+      "https://i.pinimg.com/736x/60/6b/c0/606bc0717982547e555a514b479365a0.jpg",
+      "https://i.pinimg.com/736x/1b/20/b8/1b20b8066cb17a8ec856598f041443bd.jpg",
+      "https://i.pinimg.com/1200x/4b/9f/48/4b9f483b866f2d211e78a0db6044376f.jpg",
+      "https://i.pinimg.com/736x/07/f6/2e/07f62ef23b5bec27aa7f7d5ffe70a006.jpg",
+      "https://i.pinimg.com/1200x/da/ef/e6/daefe6dfa9059019b6dbfc2a98c797fc.jpg",
+      "https://i.pinimg.com/736x/b3/1e/1a/b31e1a1695c3dafe60636aa544325985.jpg"
     ];
-    const INNER_ICONS = [          // SMALL circle - rotates counter-clockwise (9 icons)
-      "", "", "", "", "", "", "", "", ""
+    const INNER_ICONS = [
+      "https://i.pinimg.com/736x/0c/73/53/0c735354d280f3f88caa3e76e7676498.jpg", 
+      "https://i.pinimg.com/236x/77/ef/ca/77efca178b11e0fdf3680386c3926fa0.jpg", 
+      "https://i.pinimg.com/736x/96/ec/68/96ec68ff674375870db64ba4c61f627b.jpg",
+      "https://i.pinimg.com/1200x/4b/9f/48/4b9f483b866f2d211e78a0db6044376f.jpg",
+      "https://i.pinimg.com/1200x/3a/b5/92/3ab592044ca880f91e97773f739d8398.jpg",
+      "https://i.pinimg.com/736x/0c/73/53/0c735354d280f3f88caa3e76e7676498.jpg",
+      "https://i.pinimg.com/1200x/45/50/5c/45505c9dd105579d23e65b88b93b2029.jpg",
+      "https://i.pinimg.com/736x/07/f6/2e/07f62ef23b5bec27aa7f7d5ffe70a006.jpg",
+      "https://i.pinimg.com/736x/1b/20/b8/1b20b8066cb17a8ec856598f041443bd.jpg",
+      "https://i.pinimg.com/736x/0c/73/53/0c735354d280f3f88caa3e76e7676498.jpg",
+      "https://i.pinimg.com/736x/60/6b/c0/606bc0717982547e555a514b479365a0.jpg",
+      "https://i.pinimg.com/736x/0c/73/53/0c735354d280f3f88caa3e76e7676498.jpg",
+      "https://i.pinimg.com/1200x/da/ef/e6/daefe6dfa9059019b6dbfc2a98c797fc.jpg",
+      "https://i.pinimg.com/736x/b3/1e/1a/b31e1a1695c3dafe60636aa544325985.jpg"
     ];
-    const OUTER_SECONDS = 70;      // time for one full turn (bigger = slower)
+    const OUTER_SECONDS = 70;
     const INNER_SECONDS = 50;
     /* ========================================================== */
 
@@ -185,7 +206,7 @@ export function WhyUsHero({ onOpenContact }: WhyUsHeroProps) {
 
       <div className="cb-stage" aria-hidden="true" ref={stageRef}></div>
       <div className="cb-content">
-        <div style={{ '--cb-i': 0 } as React.CSSProperties}><span className="cb-badge">Why CloudsBuilt</span></div>
+        <div style={{ '--cb-i': 0 } as React.CSSProperties}><span className="cb-badge">WHY CLOUDSBUILT</span></div>
         <h1 className="cb-title" style={{ '--cb-i': 1 } as React.CSSProperties}>A technology team,<span>without hiring one.</span></h1>
         <p className="cb-lead" style={{ '--cb-i': 2 } as React.CSSProperties}>“Most businesses don't need another developer on payroll. They need someone who can build the right technology, keep it running, and be there when something breaks. That's what we do.”</p>
         <div className="cb-cta" style={{ '--cb-i': 3 } as React.CSSProperties}>

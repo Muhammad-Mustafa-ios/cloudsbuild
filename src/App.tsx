@@ -9,7 +9,7 @@ import { ServicesSection } from './components/public/ServicesSection';
 import { WhatWeManageSection } from './components/public/WhatWeManageSection';
 import { ProcessSection } from './components/public/ProcessSection';
 import { StartSmallBannerSection } from './components/public/StartSmallBannerSection';
-import { TestimonialsSection } from './components/public/TestimonialsSection';
+import { CloudReviewsSection } from './components/public/CloudReviewsSection';
 import { PricingSection } from './components/public/PricingSection';
 import { ContactSection } from './components/public/ContactSection';
 import { ContactPage } from './components/public/ContactPage';
@@ -165,14 +165,16 @@ export function AppContent() {
             <StartSmallBannerSection onOpenContact={() => handleOpenContact()} />
           </motion.div>
 
-          {/* Testimonials / Reviews */}
+
+
+          {/* Cloud Reviews Section */}
           <motion.div 
             initial={{ opacity: 0, y: 40 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: true, margin: "-80px" }} 
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <TestimonialsSection />
+            <CloudReviewsSection />
           </motion.div>
 
           {/* Pricing */}

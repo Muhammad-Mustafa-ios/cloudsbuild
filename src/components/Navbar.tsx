@@ -104,7 +104,7 @@ export function Navbar({ onNavigate, onOpenContact }: NavbarProps) {
             </div>
 
             <button
-              onClick={() => handleNavClick('testimonials')}
+              onClick={() => handleNavClick('our-work')}
               className="text-sm font-semibold text-slate-700 hover:text-[#2563EB] hover:scale-105 transition-all cursor-pointer"
             >
               Our Work
@@ -160,7 +160,7 @@ export function Navbar({ onNavigate, onOpenContact }: NavbarProps) {
               </button>
             ))}
             <button
-              onClick={() => handleNavClick('testimonials')}
+              onClick={() => handleNavClick('our-work')}
               className="py-3 px-4 rounded-xl text-left text-base font-semibold text-slate-800 hover:bg-blue-50 hover:text-[#2563EB]"
             >
               Our Work
